@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Doctors — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header">
+        <div><h1>Manage Doctors</h1><p id="doctorsSubtitle">5 doctors registered</p></div>
+        <a href="approvals.html" class="btn btn-brand btn-md"><span data-lucide="user-check" class="icon icon-16"></span> Doctor Approvals</a>
+      </div>
+      <div class="relative mb-6">
+        <span data-lucide="search" class="icon icon-16 text-gray-400" style="position:absolute;left:.75rem;top:50%;transform:translateY(-50%);"></span>
+        <input id="doctorSearch" class="form-input" style="padding-left:2.5rem;" placeholder="Search doctors...">
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Doctor</th><th class="md:table-cell">Department</th><th class="lg:table-cell">Patients</th><th class="lg:table-cell">Joined</th><th>Status</th><th></th></tr></thead>
+          <tbody id="doctorsTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/hospital-admin.js?v=8"></script>
+</body>
+</html>

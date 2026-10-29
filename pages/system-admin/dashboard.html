@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Admin Dashboard — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header"><div><h1>System Admin Dashboard</h1><p id="adminSubtitle">SynCura Platform Overview</p></div></div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+        <div class="stat-card"><div class="stat-icon" style="background:#5B3F8D18;color:#5B3F8D;"><span data-lucide="users" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statTotalUsers">0</div><div class="stat-label">Total Users</div><div class="stat-sub">All roles</div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#8E5DAF18;color:#8E5DAF;"><span data-lucide="building-2" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statHospitals">0</div><div class="stat-label">Hospitals</div><div class="stat-sub" id="statHospitalsSub">Approved</div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#0369A118;color:#0369A1;"><span data-lucide="flask-conical" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statLabs">0</div><div class="stat-label">Diagnostic Labs</div><div class="stat-sub">Approved</div></div></div>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 space-y-5">
+          <div class="card">
+            <div class="p-5 border-b flex items-center justify-between">
+              <h2 class="font-semibold text-gray-800 font-heading">Pending Approvals</h2>
+              <a href="approvals.html" class="text-xs font-medium flex items-center gap-1" style="color:#5B3F8D;">View All <span data-lucide="arrow-right" class="icon icon-12"></span></a>
+            </div>
+            <div class="divide-y divide-gray-50" id="pendingProviders"></div>
+          </div>
+          <div class="card p-5">
+            <h3 class="font-semibold text-gray-800 mb-4 font-heading">Platform Activity</h3>
+            <div class="grid grid-cols-2 gap-4" id="platformActivity"></div>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="card p-5">
+            <h3 class="font-semibold text-gray-800 mb-4 font-heading">Admin Actions</h3>
+            <a href="approvals.html" class="flex items-center gap-3" style="padding:.625rem .75rem;border-radius:.75rem;margin-bottom:.25rem;font-size:.875rem;"><span data-lucide="user-check" class="icon icon-15" style="color:var(--purple-600);"></span><span class="text-gray-700 flex-1">Provider Approvals</span><span style="background:var(--red-100);color:var(--red-600);font-size:.75rem;padding:.125rem .5rem;border-radius:9999px;font-weight:700;display:none;" id="pendingBadge">0</span><span data-lucide="arrow-right" class="icon icon-12 text-gray-400"></span></a>
+            <a href="users.html" class="flex items-center gap-3" style="padding:.625rem .75rem;border-radius:.75rem;margin-bottom:.25rem;font-size:.875rem;"><span data-lucide="users" class="icon icon-15" style="color:var(--purple-600);"></span><span class="text-gray-700 flex-1">Manage Users &amp; Roles</span><span data-lucide="arrow-right" class="icon icon-12 text-gray-400"></span></a>
+            <a href="settings.html" class="flex items-center gap-3" style="padding:.625rem .75rem;border-radius:.75rem;font-size:.875rem;"><span data-lucide="shield" class="icon icon-15" style="color:var(--purple-600);"></span><span class="text-gray-700 flex-1">Platform Settings</span><span data-lucide="arrow-right" class="icon icon-12 text-gray-400"></span></a>
+          </div>
+          <div class="card p-5">
+            <h3 class="font-semibold text-gray-800 mb-3 font-heading">Provider Breakdown</h3>
+            <div id="providerBreakdown"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/system-admin.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Records — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header"><div><h1>Medical Records</h1><p>Your complete health history across all providers</p></div></div>
+
+      <div class="flex flex-col sm:flex-row gap-3 mb-6">
+        <input id="recordSearch" class="form-input flex-1" placeholder="Search records...">
+        <select id="recordHospital" class="form-select" style="max-width:220px;"><option value="">All Hospitals</option></select>
+        <select id="recordType" class="form-select" style="max-width:220px;"><option value="">All Types</option><option value="visit">Visits</option><option value="lab">Lab Results</option><option value="prescription">Prescriptions</option></select>
+      </div>
+
+      <div class="grid grid-cols-3 gap-4 mb-8">
+        <div class="card p-4 text-center"><div class="text-2xl font-bold mb-1 font-heading" style="color:#5B3F8D;" id="statTotalVisits">—</div><div class="text-xs text-gray-500">Total Visits</div></div>
+        <div class="card p-4 text-center"><div class="text-2xl font-bold mb-1 font-heading" style="color:#0369A1;" id="statLabTests">—</div><div class="text-xs text-gray-500">Lab Tests</div></div>
+        <div class="card p-4 text-center"><div class="text-2xl font-bold mb-1 font-heading" style="color:#16A34A;" id="statPrescriptions">—</div><div class="text-xs text-gray-500">Prescriptions</div></div>
+      </div>
+
+      <div class="relative">
+        <div style="position:absolute;left:1.25rem;top:0;bottom:0;width:2px;background:var(--gray-200);"></div>
+        <div class="space-y-6" id="recordsTimeline"></div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/patient.js?v=7"></script>
+</body>
+</html>

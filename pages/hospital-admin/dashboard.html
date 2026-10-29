@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital Admin Dashboard — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header"><div><h1>Hospital Admin Dashboard</h1><p id="hospitalSubtitle">—</p></div></div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+        <div class="stat-card"><div class="stat-icon" style="background:#5B3F8D18;color:#5B3F8D;"><span data-lucide="stethoscope" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statActiveDoctors">—</div><div class="stat-label">Active Doctors</div><div class="stat-sub" id="statActiveDoctorsSub"></div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#16A34A18;color:#16A34A;"><span data-lucide="calendar" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statApptsToday">—</div><div class="stat-label">Appointments Today</div><div class="stat-sub" id="statApptsTodaySub"></div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#B57BC418;color:#B57BC4;"><span data-lucide="building-2" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statDepartments">—</div><div class="stat-label">Departments</div><div class="stat-sub" id="statDepartmentsSub"></div></div></div>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6 mb-6">
+        <div class="lg:col-span-2">
+          <div class="card">
+            <div class="p-5 border-b flex items-center justify-between">
+              <h2 class="font-semibold text-gray-800 font-heading">Today's Appointments</h2>
+              <a href="appointments.html" class="text-xs font-medium flex items-center gap-1" style="color:#5B3F8D;">View All <span data-lucide="arrow-right" class="icon icon-12"></span></a>
+            </div>
+            <div class="divide-y divide-gray-50" id="recentAppts"></div>
+          </div>
+        </div>
+        <div class="card p-5 h-fit">
+          <h3 class="font-semibold text-gray-800 mb-4 font-heading">Quick Actions</h3>
+          <a href="doctors.html" class="flex items-center gap-3" style="padding:.625rem .75rem;border-radius:.75rem;margin-bottom:.25rem;font-size:.875rem;"><span data-lucide="stethoscope" class="icon icon-15" style="color:var(--purple-600);"></span><span class="text-gray-700">Manage Doctors</span><span data-lucide="arrow-right" class="icon icon-12 text-gray-400" style="margin-left:auto;"></span></a>
+          <a href="approvals.html" class="flex items-center gap-3" style="padding:.625rem .75rem;border-radius:.75rem;margin-bottom:.25rem;font-size:.875rem;"><span data-lucide="user-check" class="icon icon-15" style="color:var(--purple-600);"></span><span class="text-gray-700">Doctor Approvals</span><span data-lucide="arrow-right" class="icon icon-12 text-gray-400" style="margin-left:auto;"></span></a>
+          <a href="departments.html" class="flex items-center gap-3" style="padding:.625rem .75rem;border-radius:.75rem;margin-bottom:.25rem;font-size:.875rem;"><span data-lucide="building-2" class="icon icon-15" style="color:var(--purple-600);"></span><span class="text-gray-700">Manage Departments</span><span data-lucide="arrow-right" class="icon icon-12 text-gray-400" style="margin-left:auto;"></span></a>
+          <a href="appointments.html" class="flex items-center gap-3" style="padding:.625rem .75rem;border-radius:.75rem;font-size:.875rem;"><span data-lucide="calendar" class="icon icon-15" style="color:var(--purple-600);"></span><span class="text-gray-700">All Appointments</span><span data-lucide="arrow-right" class="icon icon-12 text-gray-400" style="margin-left:auto;"></span></a>
+        </div>
+      </div>
+
+      <div class="card p-5">
+        <h3 class="font-semibold text-gray-800 mb-4 font-heading">Dept. Occupancy</h3>
+        <div id="deptOccupancy" class="grid md:grid-cols-2" style="column-gap:2rem;"></div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/hospital-admin.js?v=8"></script>
+</body>
+</html>

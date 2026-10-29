@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Doctors — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header"><div><h1>Find Doctors</h1><p>Search by name, specialty, or hospital</p></div></div>
+
+      <div class="card p-4 mb-6">
+        <div class="flex flex-col md:flex-row gap-3">
+          <div class="relative flex-1">
+            <span data-lucide="search" class="icon icon-16 text-gray-400" style="position:absolute;left:.75rem;top:50%;transform:translateY(-50%);"></span>
+            <input id="docQuery" class="form-input" style="padding-left:2.5rem;" placeholder="Search doctor, hospital, or specialty...">
+          </div>
+          <select id="docSpecialty" class="form-select" style="max-width:220px;">
+            <option>All Specialties</option><option>Cardiologist</option><option>Dermatologist</option>
+            <option>Gynecologist</option><option>Pediatrician</option><option>Neurologist</option><option>Orthopedic</option>
+          </select>
+          <label class="flex items-center gap-2 form-input" style="max-width:200px;cursor:pointer;">
+            <input type="checkbox" id="docAvailOnly" class="accent-purple-700">
+            <span class="text-gray-600">Available only</span>
+          </label>
+        </div>
+      </div>
+
+      <p class="text-sm text-gray-500 mb-4"><span class="font-semibold text-gray-700" id="docCount">0</span> doctors found</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" id="doctorGrid"></div>
+      <div id="docEmpty" class="text-center py-20" style="display:none;">
+        <span data-lucide="filter" class="icon icon-40 text-gray-200"></span>
+        <p class="text-gray-500 mt-4">No doctors match your search. Try different filters.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/patient.js?v=7"></script>
+</body>
+</html>

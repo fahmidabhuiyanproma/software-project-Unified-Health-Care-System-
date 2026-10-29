@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Record — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="max-w-3xl mx-auto">
+        <a href="patients.html" class="back-link mb-6" style="display:inline-flex;margin-bottom:1.5rem;"><span data-lucide="arrow-left" class="icon icon-16"></span> Back to Patients</a>
+
+        <div class="card p-5 mb-6 flex items-start gap-4">
+          <div class="avatar" style="width:3.5rem;height:3.5rem;font-size:1.25rem;" id="prAvatar">?</div>
+          <div class="flex-1">
+            <h1 class="text-xl font-bold text-gray-800 font-heading" id="prPatientName">Loading…</h1>
+            <div class="text-sm text-gray-500 mt-1" id="prPatientMeta"></div>
+          </div>
+          <div class="text-right text-xs text-gray-400"><div id="prPatientPhone"></div><div class="mt-1" id="prPatientId"></div></div>
+        </div>
+
+        <div class="flex gap-2 mb-6 card p-1 max-w-xs">
+          <button class="pr-tab-btn flex-1" data-tab="history" style="padding:.5rem;border-radius:.75rem;font-size:.875rem;font-weight:600;background:#5B3F8D;color:#fff;">Visit History</button>
+          <button class="pr-tab-btn flex-1" data-tab="add" style="padding:.5rem;border-radius:.75rem;font-size:.875rem;font-weight:600;color:var(--gray-500);">+ Add Note</button>
+        </div>
+
+        <div id="prHistory" class="space-y-4"></div>
+
+        <form id="prAddForm" class="card p-6 space-y-4" style="display:none;">
+          <h3 class="font-semibold text-gray-800 font-heading" id="prAddFormTitle">Add Visit Note</h3>
+          <div id="prSaved" class="flex items-center gap-2 text-sm" style="display:none;color:#15803d;background:var(--green-50);padding:.75rem 1rem;border-radius:.75rem;border:1px solid #bbf7d0;">
+            <span data-lucide="check-circle" class="icon icon-16"></span> Note saved successfully
+          </div>
+          <div id="prAddError" class="text-sm" style="display:none;color:var(--red-600);"></div>
+          <div class="form-group"><label class="form-label">Chief Complaint<span class="req">*</span></label><input id="prChiefComplaint" class="form-input" placeholder="e.g., Chest pain, shortness of breath"></div>
+          <div class="form-group"><label class="form-label">Vitals</label>
+            <div class="grid grid-cols-3 gap-2">
+              <input id="prBP" class="form-input" placeholder="BP (mmHg)">
+              <input id="prPulse" class="form-input" placeholder="Pulse (bpm)">
+              <input id="prTemp" class="form-input" placeholder="Temp (°C)">
+            </div>
+          </div>
+          <div class="form-group"><label class="form-label">Diagnosis<span class="req">*</span></label>
+            <textarea id="prDiagnosis" rows="2" class="form-textarea" placeholder="e.g., Hypertensive heart disease, Stable angina..."></textarea></div>
+          <div class="form-group"><label class="form-label">Prescription</label>
+            <textarea id="prPrescription" rows="3" class="form-textarea" placeholder="Tab. Losartan 50mg — 1 daily x 30 days"></textarea></div>
+          <div class="form-group"><label class="form-label">Doctor's Notes / Advice</label>
+            <textarea id="prNotes" rows="2" class="form-textarea" placeholder="Low-sodium diet, exercise 30 min daily, follow-up in 4 weeks..."></textarea></div>
+          <div class="flex gap-3 pt-2">
+            <button type="button" class="btn btn-ghost flex-1" id="prCancelBtn">Cancel</button>
+            <button type="submit" id="prSaveBtn" class="btn btn-brand flex-1" disabled><span data-lucide="plus" class="icon icon-15"></span> Save Note</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/doctor.js?v=11"></script>
+</body>
+</html>

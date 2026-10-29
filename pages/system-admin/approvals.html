@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Provider Approvals — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header"><div><h1>Provider Approvals</h1><p id="approvalsSubtitle">3 pending reviews</p></div></div>
+      <div class="table-wrap">
+        <table class="data-table min-w-700">
+          <thead><tr><th>Provider</th><th>Type</th><th>Location</th><th>Reg. No.</th><th>Submitted</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody id="providersBody"></tbody>
+        </table>
+      </div>
+
+      <div class="modal-overlay" id="providerModal" hidden>
+        <div class="modal-backdrop" id="providerModalBackdrop"></div>
+        <div class="modal-box">
+          <h3 id="providerModalTitle"></h3>
+          <div class="space-y-3 text-sm" id="providerModalBody"></div>
+          <button class="btn btn-ghost w-full mt-2" id="closeProviderModal">Close</button>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/system-admin.js?v=4"></script>
+</body>
+</html>

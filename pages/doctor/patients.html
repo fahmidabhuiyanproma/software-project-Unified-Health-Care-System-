@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Patients — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header"><div><h1>My Patients</h1><p>Patients currently under your care</p></div></div>
+      <div class="relative mb-6">
+        <span data-lucide="search" class="icon icon-16 text-gray-400" style="position:absolute;left:.75rem;top:50%;transform:translateY(-50%);"></span>
+        <input id="doctorPatientSearch" class="form-input" style="padding-left:2.5rem;" placeholder="Search patients...">
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Patient</th><th class="md:table-cell">Condition</th><th class="lg:table-cell">Last Visit</th><th class="lg:table-cell">Next Appt.</th><th>Date &amp; Time</th><th>Status</th><th></th></tr></thead>
+          <tbody id="patientsTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/doctor.js?v=11"></script>
+</body>
+</html>

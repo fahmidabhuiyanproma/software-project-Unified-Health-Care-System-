@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctor Dashboard — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="mb-6">
+        <h1 class="text-2xl font-bold text-gray-800 font-heading" id="doctorGreeting">Good morning, Doctor 👨‍⚕️</h1>
+        <p class="text-gray-500 text-sm mt-1" id="doctorSubtitle">—</p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div class="stat-card"><div class="stat-icon" style="background:#5B3F8D18;color:#5B3F8D;"><span data-lucide="users" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statPatientsToday">—</div><div class="stat-label">Patients Today</div><div class="stat-sub" id="statPatientsTodaySub"></div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#8E5DAF18;color:#8E5DAF;"><span data-lucide="calendar" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statThisWeek">—</div><div class="stat-label">This Week</div><div class="stat-sub" id="statThisWeekSub"></div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#D9770618;color:#D97706;"><span data-lucide="file-text" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statPendingRequests">—</div><div class="stat-label">Pending Requests</div><div class="stat-sub" id="statPendingRequestsSub"></div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#0369A118;color:#0369A1;"><span data-lucide="video" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statVideoCalls">—</div><div class="stat-label">Video Calls Today</div><div class="stat-sub" id="statVideoCallsSub"></div></div></div>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2">
+          <div class="card">
+            <div class="p-5 border-b flex items-center justify-between">
+              <h2 class="font-semibold text-gray-800 font-heading">Today's Schedule</h2>
+              <a href="schedule.html" class="text-xs font-medium flex items-center gap-1" style="color:#5B3F8D;">Full Schedule <span data-lucide="arrow-right" class="icon icon-12"></span></a>
+            </div>
+            <div class="divide-y divide-gray-50" id="todaySchedule"></div>
+          </div>
+        </div>
+        <div class="space-y-5">
+          <div class="card p-5">
+            <h3 class="font-semibold text-gray-800 mb-4 font-heading">Quick Actions</h3>
+            <a href="patients.html" class="flex items-center gap-3" style="padding:.625rem .75rem;border-radius:.75rem;margin-bottom:.25rem;font-size:.875rem;"><span data-lucide="file-text" class="icon icon-16" style="color:var(--purple-600);"></span><span class="text-gray-700">Add Diagnosis / Note</span><span data-lucide="arrow-right" class="icon icon-12 text-gray-400" style="margin-left:auto;"></span></a>
+            <a href="schedule.html" class="flex items-center gap-3" style="padding:.625rem .75rem;border-radius:.75rem;margin-bottom:.25rem;font-size:.875rem;"><span data-lucide="calendar" class="icon icon-16" style="color:var(--purple-600);"></span><span class="text-gray-700">View My Schedule</span><span data-lucide="arrow-right" class="icon icon-12 text-gray-400" style="margin-left:auto;"></span></a>
+            <a href="patients.html" class="flex items-center gap-3" style="padding:.625rem .75rem;border-radius:.75rem;margin-bottom:.25rem;font-size:.875rem;"><span data-lucide="users" class="icon icon-16" style="color:var(--purple-600);"></span><span class="text-gray-700">Patient List</span><span data-lucide="arrow-right" class="icon icon-12 text-gray-400" style="margin-left:auto;"></span></a>
+            <a href="../patient/telemedicine.html" class="flex items-center gap-3" style="padding:.625rem .75rem;border-radius:.75rem;font-size:.875rem;"><span data-lucide="video" class="icon icon-16" style="color:var(--purple-600);"></span><span class="text-gray-700">Telemedicine</span><span data-lucide="arrow-right" class="icon icon-12 text-gray-400" style="margin-left:auto;"></span></a>
+          </div>
+          <div class="card p-5">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-semibold text-gray-800 font-heading">Pending Requests</h3>
+              <a href="patients.html" class="text-xs font-medium" style="color:#5B3F8D;">Review</a>
+            </div>
+            <div class="space-y-3" id="pendingRequestsList"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/doctor.js?v=11"></script>
+</body>
+</html>

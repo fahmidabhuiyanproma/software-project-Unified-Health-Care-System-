@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/auth.css">
+</head>
+<body class="auth-page">
+<div class="flex flex-col items-center justify-center px-4 py-10">
+  <div style="width:100%;max-width:28rem;">
+    <a href="role-select.html" class="back-link mb-8" style="display:inline-flex;margin-bottom:2rem;"><span data-lucide="arrow-left" class="icon icon-16"></span> Back</a>
+    <div class="flex items-center gap-2 mb-6">
+      <div class="brand-mark" style="width:2rem;height:2rem;"><svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M12 21s-6.716-4.29-9.428-8.114C.688 10.09 1.5 6 5 5c2.2-.14 3.6 1.02 4.5 2.3.2.29.6.29.8 0C11.2 6.02 12.6 4.86 14.8 5c3.5 1 4.312 5.09 2.428 7.886C18.716 16.71 12 21 12 21z"/></svg></div>
+      <span class="font-bold text-lg font-heading" style="color:#5B3F8D;">SynCura</span>
+    </div>
+    <h1 id="registerTitle" class="text-2xl font-bold text-gray-800 mb-1 font-heading">Create Account</h1>
+    <p id="stepLabel" class="text-gray-500 text-sm mb-8">Step 1 of 2 — Personal Information</p>
+
+    <div class="progress-steps">
+      <div class="seg done" id="seg1"></div>
+      <div class="seg" id="seg2"></div>
+    </div>
+
+    <form id="registerForm" class="card p-6 space-y-4" novalidate>
+      <div id="regStep1">
+        <div class="form-group mb-4">
+          <label class="form-label">Full Name<span class="req">*</span></label>
+          <input id="regName" class="form-input" placeholder="Your full name" required>
+        </div>
+        <div class="form-group mb-4">
+          <label class="form-label">Phone Number<span class="req">*</span></label>
+          <input id="regPhone" class="form-input" placeholder="+880 17XX-XXXXXX" required>
+        </div>
+        <div class="form-group mb-4">
+          <label class="form-label">Email Address</label>
+          <input id="regEmail" type="email" class="form-input" placeholder="your@email.com">
+        </div>
+        <div id="doctorFields" style="display:none;">
+          <div class="form-group mb-4">
+            <label class="form-label">Hospital<span class="req">*</span></label>
+            <select id="regHospital" class="form-select">
+              <option value="">Select your hospital</option>
+            </select>
+          </div>
+          <div class="form-group mb-4">
+            <label class="form-label">Department<span class="req">*</span></label>
+            <select id="regDepartment" class="form-select" disabled>
+              <option value="">Select hospital first</option>
+            </select>
+          </div>
+        </div>
+        <div id="providerFields" class="form-group" style="display:none;">
+          <label class="form-label" id="regLicenseLabel">Organization / License Number<span class="req">*</span></label>
+          <input id="regLicense" class="form-input" placeholder="e.g. BMDC-12345 or Hospital Reg. No.">
+        </div>
+      </div>
+
+      <div id="regStep2" style="display:none;">
+        <div class="form-group mb-4">
+          <label class="form-label">Create Password<span class="req">*</span></label>
+          <input id="regPassword" type="password" class="form-input" placeholder="At least 8 characters" minlength="8" required>
+        </div>
+        <div class="form-group mb-4">
+          <label class="form-label">Confirm Password<span class="req">*</span></label>
+          <input id="regConfirmPassword" type="password" class="form-input" placeholder="Repeat your password" required>
+        </div>
+        <div id="providerNotice" class="text-sm rounded-xl" style="display:none;background:#fffbeb;color:#92400e;padding:.75rem 1rem;border:1px solid var(--amber-100);">
+          ⏳ Provider accounts are reviewed by our admin team and approved within 1–2 business days.
+        </div>
+      </div>
+
+      <div id="registerError" class="text-sm text-red-600 bg-red-50 rounded-xl" style="padding:.75rem 1rem;display:none;margin-bottom:1rem;"></div>
+
+      <button id="registerSubmit" type="submit" class="btn btn-brand btn-lg w-full mt-2">Continue</button>
+    </form>
+
+    <div id="registerDone" class="card result-card p-10 text-center" style="display:none;">
+      <div class="result-icon-ok"><span data-lucide="check-circle" class="icon icon-32"></span></div>
+      <h2 class="result-title text-xl font-bold text-gray-800 mb-3 font-heading"></h2>
+      <p class="result-body text-gray-500"></p>
+      <a href="login.html" class="btn btn-brand result-back-login mt-6" style="display:none;">Back to Sign In</a>
+    </div>
+
+    <p class="mt-6 text-center text-sm text-gray-500">Already registered? <a href="login.html" class="font-semibold" style="color:#5B3F8D;">Sign In</a></p>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/auth.js?v=4"></script>
+<script>if (window.lucide) lucide.createIcons();</script>
+</body>
+</html>

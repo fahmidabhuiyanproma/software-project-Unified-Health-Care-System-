@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appointment Overview — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header"><div><h1>Appointment Overview</h1><p id="apptOverviewSubtitle">6 total today across all departments</p></div></div>
+      <div class="relative mb-6">
+        <span data-lucide="search" class="icon icon-16 text-gray-400" style="position:absolute;left:.75rem;top:50%;transform:translateY(-50%);"></span>
+        <input id="apptOverviewSearch" class="form-input" style="padding-left:2.5rem;" placeholder="Search by patient or doctor...">
+      </div>
+      <div class="table-wrap">
+        <table class="data-table min-w-640">
+          <thead><tr><th>ID</th><th>Patient</th><th>Doctor</th><th>Department</th><th>Date &amp; Time</th><th>Type</th><th>Status</th></tr></thead>
+          <tbody id="apptOverviewBody"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/hospital-admin.js?v=8"></script>
+</body>
+</html>

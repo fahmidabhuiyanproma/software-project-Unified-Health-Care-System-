@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctor Approvals — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header"><div><h1>Doctor Approvals</h1><p id="doctorApprovalsSubtitle">0 pending reviews</p></div></div>
+      <div class="table-wrap">
+        <table class="data-table min-w-700">
+          <thead><tr><th>Doctor</th><th>Department</th><th>Email</th><th>Reg. No.</th><th>Submitted</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody id="doctorApprovalsBody"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/hospital-admin.js?v=8"></script>
+</body>
+</html>

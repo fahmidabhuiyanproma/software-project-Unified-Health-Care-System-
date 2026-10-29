@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Bookings — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header"><div><h1>Manage Bookings</h1><p id="bookingsSubtitle">5 bookings · Today</p></div></div>
+      <div class="table-wrap">
+        <table class="data-table min-w-600">
+          <thead><tr><th>ID</th><th>Patient</th><th>Test</th><th>Date &amp; Time</th><th>Fee</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody id="bookingsBody"></tbody>
+        </table>
+      </div>
+
+      <div class="modal-overlay" id="uploadModal" hidden>
+        <div class="modal-backdrop" id="uploadBackdrop"></div>
+        <div class="modal-box">
+          <h3 id="uploadTitle">Upload Result</h3>
+          <div id="uploadForm">
+            <p class="text-sm text-gray-500 mb-3">Patient: <strong id="uploadPatientName"></strong></p>
+            <div id="uploadError" class="text-sm mb-3" style="display:none;color:var(--red-600);"></div>
+            <div class="form-group mb-3"><label class="form-label">Result Summary</label>
+              <textarea id="resultSummary" rows="3" class="form-textarea" placeholder="e.g., WBC: 7.2, RBC: 4.8 — All within normal range"></textarea></div>
+            <div class="form-group mb-4"><label class="form-label">Attach PDF Report (optional)</label>
+              <label for="resultFile" style="display:block;border:2px dashed var(--gray-200);border-radius:.75rem;padding:1.5rem;text-align:center;cursor:pointer;">
+                <span data-lucide="upload" class="icon icon-24 text-gray-300"></span>
+                <p class="text-sm text-gray-400 mt-2" id="resultFileLabel">Click to upload or drag &amp; drop</p>
+                <p class="text-xs text-gray-300 mt-1">PDF, up to 10MB</p>
+                <input type="file" id="resultFile" accept="application/pdf" style="display:none;">
+              </label>
+            </div>
+            <div class="flex gap-3">
+              <button class="btn btn-ghost flex-1" id="cancelUpload">Cancel</button>
+              <button class="btn btn-brand flex-1" id="publishResult">Publish Result</button>
+            </div>
+          </div>
+          <div id="uploadDone" style="display:none;text-align:center;padding:1rem 0;">
+            <span data-lucide="check-circle" class="icon icon-32 text-green-500"></span>
+            <p style="color:#15803d;font-weight:600;margin-top:.75rem;">Result published!</p>
+            <p class="text-xs text-gray-400 mt-1">Patient has been notified.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/lab-admin.js?v=8"></script>
+</body>
+</html>

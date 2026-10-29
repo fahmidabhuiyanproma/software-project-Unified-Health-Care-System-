@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile — SynCura</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header"><div><h1>My Profile</h1><p>Manage your photo, personal details and password</p></div></div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="card p-6 h-fit" style="text-align:center;">
+          <div id="profileAvatar" class="avatar avatar-round" style="width:7rem;height:7rem;font-size:2.25rem;margin:0 auto 1rem;"></div>
+          <div class="font-semibold text-gray-800 font-heading" id="profileName">—</div>
+          <div class="text-sm" style="color:var(--purple-700);" id="profileRole"></div>
+          <div class="text-xs text-gray-400 mt-1" id="profileSince"></div>
+
+          <input type="file" id="avatarInput" accept="image/jpeg,image/png,image/webp,image/gif" style="display:none;">
+          <div class="flex gap-2 mt-4" style="justify-content:center;flex-wrap:wrap;">
+            <button type="button" class="btn btn-brand btn-sm" id="changePhotoBtn"><span data-lucide="camera" class="icon icon-13"></span> Change photo</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="removePhotoBtn" style="display:none;">Remove</button>
+          </div>
+          <div class="text-xs text-gray-400 mt-3">JPG, PNG, WebP or GIF · up to 2 MB</div>
+          <div id="avatarMsg" class="text-sm mt-3" style="display:none;"></div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-6">
+          <form id="profileForm" class="card p-6" novalidate>
+            <h3 class="font-semibold text-gray-800 mb-4 font-heading">Personal details</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="form-group"><label class="form-label">Full name<span class="req">*</span></label><input id="pfName" class="form-input" maxlength="150"></div>
+              <div class="form-group"><label class="form-label">Phone<span class="req">*</span></label><input id="pfPhone" class="form-input" maxlength="20"></div>
+              <div class="form-group" style="grid-column:1/-1;"><label class="form-label">Email</label><input id="pfEmail" type="email" class="form-input" maxlength="190" placeholder="your@email.com"></div>
+            </div>
+
+            <div id="doctorSection" style="display:none;">
+              <h3 class="font-semibold text-gray-800 mt-6 mb-4 font-heading">Doctor profile</h3>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="form-group"><label class="form-label">Specialty<span class="req">*</span></label><input id="pfSpecialty" class="form-input" maxlength="100"></div>
+                <div class="form-group"><label class="form-label">Appointment fee (৳)<span class="req">*</span></label><input id="pfFee" type="number" min="0" step="1" class="form-input"></div>
+                <div class="form-group"><label class="form-label">Experience (years)</label><input id="pfExperience" type="number" min="0" max="80" class="form-input"></div>
+                <div class="form-group" style="grid-column:1/-1;"><label class="form-label">About you</label><textarea id="pfBio" rows="4" class="form-textarea" maxlength="2000" placeholder="A short introduction patients will see on your profile"></textarea></div>
+              </div>
+            </div>
+
+            <div id="orgSection" style="display:none;">
+              <h3 class="font-semibold text-gray-800 mt-6 mb-4 font-heading" id="orgTitle">Organization</h3>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="form-group" style="grid-column:1/-1;"><label class="form-label">Name<span class="req">*</span></label><input id="pfOrgName" class="form-input" maxlength="150"></div>
+                <div class="form-group" style="grid-column:1/-1;"><label class="form-label">Address</label><input id="pfOrgAddress" class="form-input" maxlength="255"></div>
+                <div class="form-group"><label class="form-label">City</label><input id="pfOrgCity" class="form-input" maxlength="100"></div>
+                <div class="form-group"><label class="form-label">Phone</label><input id="pfOrgPhone" class="form-input" maxlength="20"></div>
+              </div>
+            </div>
+
+            <div id="profileMsg" class="text-sm rounded-xl mt-4" style="display:none;padding:.75rem 1rem;"></div>
+            <button type="submit" class="btn btn-brand mt-4" id="saveProfileBtn">Save changes</button>
+          </form>
+
+          <form id="passwordForm" class="card p-6" novalidate>
+            <h3 class="font-semibold text-gray-800 mb-4 font-heading">Change password</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="form-group" style="grid-column:1/-1;"><label class="form-label">Current password</label><input id="pwCurrent" type="password" class="form-input" autocomplete="current-password"></div>
+              <div class="form-group"><label class="form-label">New password</label><input id="pwNew" type="password" class="form-input" minlength="8" placeholder="At least 8 characters" autocomplete="new-password"></div>
+              <div class="form-group"><label class="form-label">Confirm new password</label><input id="pwConfirm" type="password" class="form-input" autocomplete="new-password"></div>
+            </div>
+            <div id="passwordMsg" class="text-sm rounded-xl mt-4" style="display:none;padding:.75rem 1rem;"></div>
+            <button type="submit" class="btn btn-secondary mt-4" id="savePasswordBtn">Update password</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../';</script>
+<script src="../js/app.js?v=9"></script>
+<script src="../js/profile.js?v=1"></script>
+</body>
+</html>

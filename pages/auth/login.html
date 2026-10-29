@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/auth.css">
+</head>
+<body>
+
+<div class="login-shell">
+  <aside class="login-aside">
+    <div class="flex items-center gap-2">
+      <div style="width:2rem;height:2rem;border-radius:.5rem;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 21s-6.716-4.29-9.428-8.114C.688 10.09 1.5 6 5 5c2.2-.14 3.6 1.02 4.5 2.3.2.29.6.29.8 0C11.2 6.02 12.6 4.86 14.8 5c3.5 1 4.312 5.09 2.428 7.886C18.716 16.71 12 21 12 21z"/></svg>
+      </div>
+      <span class="font-bold text-white text-xl font-heading">SynCura</span>
+    </div>
+    <div>
+      <h2>Welcome back to Bangladesh's healthcare platform.</h2>
+      <p>Secure access to appointments, records, pharmacy, and more.</p>
+    </div>
+    <div style="color:#d8b4fe;font-size:.875rem;">© 2026 SynCura Health Technologies Ltd.</div>
+  </aside>
+
+  <div class="login-form-col">
+    <div class="login-form-inner">
+      <a href="../../index.html" class="back-link mb-8" style="display:inline-flex;margin-bottom:2rem;"><span data-lucide="arrow-left" class="icon icon-16"></span> Back to Home</a>
+      <h1 class="text-2xl font-bold text-gray-800 mb-1 font-heading">Sign In</h1>
+      <p class="text-gray-500 text-sm mb-8">Access your SynCura account</p>
+
+      <form id="loginForm" class="space-y-4">
+        <div class="form-group">
+          <label class="form-label">Email or Phone Number<span class="req">*</span></label>
+          <input id="loginEmail" type="text" class="form-input" placeholder="email@example.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password<span class="req">*</span></label>
+          <div class="relative">
+            <input id="loginPass" type="password" class="form-input" placeholder="Enter your password" style="padding-right:2.75rem;" required>
+            <button type="button" id="togglePass" class="absolute" style="right:.75rem;top:50%;transform:translateY(-50%);color:var(--gray-400);">
+              <span data-lucide="eye" class="icon icon-18"></span>
+            </button>
+          </div>
+        </div>
+        <div class="flex justify-end">
+          <button type="button" class="text-sm font-medium" style="color:#5B3F8D;">Forgot password?</button>
+        </div>
+        <div id="loginError" class="text-sm text-red-600 bg-red-50 rounded-xl" style="padding:.75rem 1rem;display:none;"></div>
+        <button id="loginSubmit" type="submit" class="btn btn-brand btn-lg w-full">Sign In</button>
+      </form>
+
+      <p class="mt-8 text-center text-sm text-gray-500">Don't have an account? <a href="role-select.html" class="font-semibold" style="color:#5B3F8D;">Create one</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/auth.js?v=4"></script>
+<script>if (window.lucide) lucide.createIcons();</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Departments & Slots — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header">
+        <div><h1>Departments &amp; Slots</h1><p>Manage hospital departments and appointment capacity</p></div>
+        <button id="addDeptBtn" class="btn btn-brand btn-md">+ Add Department</button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4" id="deptGrid"></div>
+
+      <div class="modal-overlay" id="addDeptModal" hidden>
+        <div class="modal-backdrop" id="addDeptBackdrop"></div>
+        <div class="modal-box">
+          <h3>Add New Department</h3>
+          <div class="space-y-3">
+            <div id="addDeptError" class="text-sm" style="display:none;color:var(--red-600);"></div>
+            <input id="deptName" class="form-input" placeholder="Department Name (e.g., Orthopedics)">
+            <input id="deptBeds" type="number" class="form-input" placeholder="Bed Count">
+            <div class="flex gap-3 pt-2">
+              <button class="btn btn-ghost flex-1" id="cancelAddDept">Cancel</button>
+              <button class="btn btn-brand flex-1" id="confirmAddDept">Add Department</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/hospital-admin.js?v=8"></script>
+</body>
+</html>

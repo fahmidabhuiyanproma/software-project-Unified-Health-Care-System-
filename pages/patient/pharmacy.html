@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Pharmacy — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+
+      <div id="pharmBrowse">
+        <div class="page-header">
+          <div><h1>Online Pharmacy</h1><p>Order medicines with home delivery</p></div>
+          <button id="openCartBtn" class="btn btn-secondary btn-md"><span data-lucide="shopping-cart" class="icon icon-16"></span> Cart (<span id="cartQtyLabel">0</span>)</button>
+        </div>
+        <div class="relative mb-6">
+          <span data-lucide="search" class="icon icon-16 text-gray-400" style="position:absolute;left:.75rem;top:50%;transform:translateY(-50%);"></span>
+          <input id="medQuery" class="form-input" style="padding-left:2.5rem;" placeholder="Search medicines by name or generic...">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="medGrid"></div>
+      </div>
+
+      <div id="pharmCart" class="max-w-lg mx-auto" style="display:none;">
+        <div class="page-header"><div><h1>Your Cart</h1><p id="cartCountLabel">0 item types</p></div></div>
+        <div id="cartEmpty" class="card text-center" style="display:none;padding:2.5rem 0;">
+          <span data-lucide="shopping-cart" class="icon icon-40 text-gray-200"></span>
+          <p class="text-gray-500 mt-4">Your cart is empty</p>
+          <button class="btn btn-brand btn-md mt-4" id="cartBrowseBtn">Browse Medicines</button>
+        </div>
+        <div id="cartContent">
+          <div class="card p-4 mb-4" id="cartItems"></div>
+          <div class="card p-4 mb-4">
+            <div class="flex justify-between text-sm mb-2"><span class="text-gray-500">Subtotal</span><span id="cartSubtotal">৳ 0</span></div>
+            <div class="flex justify-between text-sm mb-3"><span class="text-gray-500">Delivery</span><span>৳ 50</span></div>
+            <div class="flex justify-between font-bold text-gray-800 text-base"><span>Total</span><span style="color:#5B3F8D;" id="cartTotal">৳ 50</span></div>
+          </div>
+          <div class="flex gap-3">
+            <button class="btn btn-secondary flex-1" id="continueShoppingBtn">Continue Shopping</button>
+            <button class="btn btn-brand flex-1" id="toPaymentBtn">Proceed to Payment</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="pharmPayment" class="max-w-lg mx-auto" style="display:none;">
+        <div class="page-header"><div><h1>Payment</h1><p>Secure checkout · Test Mode</p></div></div>
+        <div class="card p-6 mb-4">
+          <div class="text-xs rounded-lg mb-4" style="color:var(--amber-700);background:var(--amber-50);padding:.5rem .75rem;border:1px solid var(--amber-100);">🔒 TEST MODE — No real transactions occur</div>
+          <h3 class="font-semibold text-gray-800 mb-4 font-heading">Select Payment Method</h3>
+          <div class="space-y-3 mb-6" id="payMethods">
+            <button type="button" class="pay-method" data-id="bkash" data-color="#E2136E" data-num="01XXXXXXXXX">bKash</button>
+            <button type="button" class="pay-method" data-id="nagad" data-color="#F05822" data-num="01XXXXXXXXX">Nagad</button>
+            <button type="button" class="pay-method" data-id="rocket" data-color="#7B2D8B" data-num="01XXXXXXXXX">Rocket (DBBL)</button>
+          </div>
+          <div class="border-t pt-4 space-y-2 mb-4">
+            <div class="flex justify-between text-sm"><span class="text-gray-500">Subtotal</span><span id="paySubtotal">৳ 0</span></div>
+            <div class="flex justify-between text-sm"><span class="text-gray-500">Delivery</span><span>৳ 50</span></div>
+            <div class="flex justify-between font-bold text-gray-800"><span>Total</span><span style="color:#5B3F8D;" id="payTotal">৳ 50</span></div>
+          </div>
+          <div id="payError" class="text-sm mb-3" style="display:none;color:var(--red-600);"></div>
+          <button class="btn btn-brand btn-lg w-full" id="payNowBtn">Pay <span id="payNowAmount">৳ 50</span></button>
+        </div>
+      </div>
+
+      <div id="pharmDone" class="max-w-md mx-auto" style="display:none;padding-top:2.5rem;">
+        <div class="card p-10 text-center">
+          <div class="result-icon-ok"><span data-lucide="check-circle" class="icon icon-32"></span></div>
+          <h2 class="text-xl font-bold text-gray-800 mb-2 font-heading">Order Placed!</h2>
+          <p class="text-gray-500 text-sm mb-2" id="orderIdLabel"></p>
+          <p class="text-gray-500 text-sm mb-4" id="orderPayLabel"></p>
+          <p class="text-xs text-gray-400 mb-6">Estimated delivery: 2–4 hours to your registered address.</p>
+          <div class="text-xs rounded-xl mb-5" style="background:var(--amber-50);color:var(--amber-700);padding:.625rem 1rem;border:1px solid var(--amber-100);">⚠️ Test Mode — No real payment was processed</div>
+          <button class="btn btn-brand btn-lg w-full" id="orderDoneBtn">Back to Dashboard</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<style>
+.pay-method{width:100%;display:flex;align-items:center;gap:1rem;padding:.875rem 1rem;border-radius:1rem;border:2px solid var(--gray-200);text-align:left;}
+.pay-method.selected{border-color:var(--purple-500);}
+</style>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/patient.js?v=7"></script>
+</body>
+</html>

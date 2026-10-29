@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Users & Roles — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header">
+        <div><h1>Manage Users &amp; Roles</h1><p id="usersSubtitle">6 total users on the platform</p></div>
+        <button id="addAdminBtn" class="btn btn-brand btn-md"><span data-lucide="shield-plus" class="icon icon-16"></span> Add Admin</button>
+      </div>
+      <div class="relative mb-6">
+        <span data-lucide="search" class="icon icon-16 text-gray-400" style="position:absolute;left:.75rem;top:50%;transform:translateY(-50%);"></span>
+        <input id="userSearch" class="form-input" style="padding-left:2.5rem;" placeholder="Search users...">
+      </div>
+      <div class="table-wrap">
+        <table class="data-table min-w-640">
+          <thead><tr><th>User</th><th>Email</th><th>Role</th><th>Joined</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody id="usersBody"></tbody>
+        </table>
+      </div>
+
+      <div class="modal-overlay" id="addAdminModal" hidden>
+        <div class="modal-backdrop" id="addAdminBackdrop"></div>
+        <div class="modal-box">
+          <h3>Add System Admin</h3>
+          <div class="space-y-3">
+            <div id="addAdminError" class="text-sm" style="display:none;color:var(--red-600);"></div>
+            <input id="adminFullName" class="form-input" placeholder="Full Name">
+            <input id="adminEmail" type="email" class="form-input" placeholder="Email Address">
+            <input id="adminPhone" class="form-input" placeholder="Phone Number">
+            <div class="flex gap-3 pt-2">
+              <button class="btn btn-ghost flex-1" id="cancelAddAdmin">Cancel</button>
+              <button class="btn btn-brand flex-1" id="confirmAddAdmin">Add Admin</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/system-admin.js?v=4"></script>
+</body>
+</html>

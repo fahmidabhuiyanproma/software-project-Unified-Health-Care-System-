@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose Account Type — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/auth.css">
+</head>
+<body class="auth-page">
+
+<div class="p-4"><a href="../../index.html" class="back-link"><span data-lucide="arrow-left" class="icon icon-16"></span> Back to Home</a></div>
+
+<div class="flex flex-col items-center justify-center px-4 py-10">
+  <div class="flex items-center gap-2 mb-2">
+    <div class="brand-mark" style="width:2.25rem;height:2.25rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 21s-6.716-4.29-9.428-8.114C.688 10.09 1.5 6 5 5c2.2-.14 3.6 1.02 4.5 2.3.2.29.6.29.8 0C11.2 6.02 12.6 4.86 14.8 5c3.5 1 4.312 5.09 2.428 7.886C18.716 16.71 12 21 12 21z"/></svg></div>
+    <span class="font-bold text-2xl font-heading" style="color:#5B3F8D;">SynCura</span>
+  </div>
+  <h1 class="text-2xl font-bold text-gray-800 mb-2 mt-4 text-center font-heading">Choose Your Account Type</h1>
+  <p class="text-gray-500 mb-8 text-center">Select the option that best describes you. Provider accounts require admin approval.</p>
+
+  <div class="role-grid" id="roleGrid">
+    <button class="role-card" data-role="patient">
+      <div class="role-icon" style="background:#5B3F8D18;color:#5B3F8D;"><span data-lucide="user" class="icon icon-22"></span></div>
+      <h3>Patient</h3><p>Book appointments, manage your health records, order medicines</p>
+    </button>
+    <button class="role-card" data-role="doctor">
+      <div class="role-icon" style="background:#8E5DAF18;color:#8E5DAF;"><span data-lucide="stethoscope" class="icon icon-22"></span></div>
+      <h3>Doctor</h3><p>Manage your schedule, view patient records, conduct telemedicine</p>
+    </button>
+    <button class="role-card" data-role="hospital">
+      <div class="role-icon" style="background:#B57BC418;color:#B57BC4;"><span data-lucide="building-2" class="icon icon-22"></span></div>
+      <h3>Hospital / Clinic</h3><p>Manage doctors, departments, and appointment scheduling</p>
+    </button>
+    <button class="role-card" data-role="lab">
+      <div class="role-icon" style="background:#5B3F8D18;color:#5B3F8D;"><span data-lucide="flask-conical" class="icon icon-22"></span></div>
+      <h3>Diagnostic Lab</h3><p>Manage test catalog, bookings, and upload patient results</p>
+    </button>
+    <button class="role-card" data-role="pharmacy">
+      <div class="role-icon" style="background:#8E5DAF18;color:#8E5DAF;"><span data-lucide="shopping-bag" class="icon icon-22"></span></div>
+      <h3>Pharmacy</h3><p>Manage medicine catalog, stock levels, and customer orders</p>
+    </button>
+    <button class="role-card" data-role="admin">
+      <div class="role-icon" style="background:#B57BC418;color:#B57BC4;"><span data-lucide="shield" class="icon icon-22"></span></div>
+      <h3>System Admin</h3><p>Platform-wide oversight, provider approvals, and settings</p>
+    </button>
+  </div>
+
+  <p class="mt-8 text-sm text-gray-500">Already have an account? <a href="login.html" class="font-semibold" style="color:#5B3F8D;">Sign In</a></p>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/auth.js?v=4"></script>
+</body>
+</html>

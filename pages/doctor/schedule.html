@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Schedule — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header"><div><h1>My Schedule</h1><p>Manage your appointment slots and availability</p></div></div>
+
+      <div class="flex items-center gap-2 mb-6">
+        <button style="padding:.5rem;border-radius:.75rem;"><span data-lucide="chevron-left" class="icon icon-18"></span></button>
+        <div class="flex gap-2 overflow-x-auto" id="dayTabs"></div>
+        <button style="padding:.5rem;border-radius:.75rem;"><span data-lucide="chevron-right" class="icon icon-18"></span></button>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 space-y-2" id="slotsList"></div>
+
+        <div class="card p-5 h-fit">
+          <h3 class="font-semibold text-gray-800 mb-4 font-heading">Availability Settings</h3>
+          <div class="space-y-3" id="availDays"></div>
+          <div class="mt-4 pt-4 border-t">
+            <p class="text-xs text-gray-500 mb-2">Session hours</p>
+            <div class="flex gap-2 text-sm">
+              <input class="form-input" value="9:00 AM" style="font-size:.75rem;">
+              <span class="text-gray-400" style="align-self:center;">to</span>
+              <input class="form-input" value="5:00 PM" style="font-size:.75rem;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/doctor.js?v=11"></script>
+</body>
+</html>

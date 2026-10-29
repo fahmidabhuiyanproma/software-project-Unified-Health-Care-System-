@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pharmacy Admin Dashboard — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header"><div><h1>Pharmacy Admin Dashboard</h1><p id="pharmacySubtitle">—</p></div></div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div class="stat-card"><div class="stat-icon" style="background:#5B3F8D18;color:#5B3F8D;"><span data-lucide="shopping-bag" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statOrdersToday">—</div><div class="stat-label">Orders Today</div><div class="stat-sub" id="statOrdersTodaySub"></div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#16A34A18;color:#16A34A;"><span data-lucide="trending-up" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statRevenueToday">—</div><div class="stat-label">Revenue Today</div><div class="stat-sub" id="statRevenueTodaySub"></div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#8E5DAF18;color:#8E5DAF;"><span data-lucide="package" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statTotalProducts">—</div><div class="stat-label">Total Products</div><div class="stat-sub">In catalog</div></div></div>
+        <div class="stat-card"><div class="stat-icon" style="background:#D9770618;color:#D97706;"><span data-lucide="alert-triangle" class="icon icon-20"></span></div>
+          <div><div class="stat-value" id="statLowStock">—</div><div class="stat-label">Low Stock Alerts</div><div class="stat-sub" id="statLowStockSub"></div></div></div>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2">
+          <div class="card">
+            <div class="p-5 border-b flex items-center justify-between">
+              <h2 class="font-semibold text-gray-800 font-heading">Recent Orders</h2>
+              <a href="orders.html" class="text-xs font-medium flex items-center gap-1" style="color:#5B3F8D;">View All <span data-lucide="arrow-right" class="icon icon-12"></span></a>
+            </div>
+            <div class="divide-y divide-gray-50" id="recentOrders"></div>
+          </div>
+        </div>
+        <div class="card p-5 h-fit">
+          <h3 class="font-semibold text-gray-800 mb-4 font-heading">⚠ Low Stock</h3>
+          <div id="lowStockList"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/pharmacy-admin.js?v=5"></script>
+</body>
+</html>

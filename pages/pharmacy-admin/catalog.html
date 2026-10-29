@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicine Catalog & Stock — SynCura</title>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="shell-main">
+    <header class="navbar" id="navbar"></header>
+    <main class="content">
+      <div class="page-header">
+        <div><h1>Medicine Catalog &amp; Stock</h1><p id="medCatalogSubtitle">6 medicines · 2 low stock, 1 out of stock</p></div>
+        <button id="addMedBtn" class="btn btn-brand btn-md"><span data-lucide="plus" class="icon icon-16"></span> Add Medicine</button>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table min-w-640">
+          <thead><tr><th>Medicine</th><th>Generic Name</th><th>Category</th><th>Price/Unit</th><th>Stock</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody id="medCatalogBody"></tbody>
+        </table>
+      </div>
+
+      <div class="modal-overlay" id="addMedModal" hidden>
+        <div class="modal-backdrop" id="addMedBackdrop"></div>
+        <div class="modal-box">
+          <h3 id="medModalTitle">Add Medicine to Catalog</h3>
+          <div class="space-y-3">
+            <div id="addMedError" class="text-sm" style="display:none;color:var(--red-600);"></div>
+            <input id="medName" class="form-input" placeholder="Brand Name (e.g., Napa 500mg)">
+            <input id="medGeneric" class="form-input" placeholder="Generic Name (e.g., Paracetamol)">
+            <select id="medCategory" class="form-select"><option value="">Select Category</option><option>Analgesic</option><option>Antibiotic</option><option>Antidiabetic</option><option>Antihypertensive</option><option>Antacid</option><option>Antihistamine</option><option>Supplement</option></select>
+            <div class="grid grid-cols-2 gap-2">
+              <input id="medPrice" type="number" class="form-input" placeholder="Price per unit (৳)">
+              <input id="medStock" type="number" class="form-input" placeholder="Initial stock (units)">
+            </div>
+            <div class="flex gap-3 pt-2">
+              <button class="btn btn-ghost flex-1" id="cancelAddMed">Cancel</button>
+              <button class="btn btn-brand flex-1" id="confirmAddMed">Add Medicine</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>window.SC_BASE = '../../';</script>
+<script src="../../js/app.js?v=9"></script>
+<script src="../../js/pharmacy-admin.js?v=5"></script>
+</body>
+</html>
